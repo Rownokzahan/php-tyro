@@ -1,0 +1,1 @@
+<!-- is_long — Alias of is_int() -->

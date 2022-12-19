@@ -1,0 +1,46 @@
+h1{
+    margin-top: 100px;
+    color: rgb(23, 1, 42);
+    text-align: center;
+}
+
+.container{
+    width: max-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+p{
+    position: relative;
+    color: blueviolet;
+    bottom: -25px;
+    left: 19px;
+    width: fit-content;
+    padding: 0 2px;
+    background-color: white;
+}
+
+input{
+    font-size: large;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid blueviolet;
+    background: white;
+    margin-right: 10px;
+    padding: 3px 12px;
+    color: rgb(132, 28, 228);
+}
+input[type=text]:focus {
+    background-color: white;
+    outline: 1px solid blueviolet;
+    color: rgb(132, 28, 228);
+}
+button{
+    font-size: larger;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: blueviolet;
+    padding: 10px 13px;
+    cursor: pointer;
+}

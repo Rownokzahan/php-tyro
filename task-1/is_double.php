@@ -1,0 +1,1 @@
+<!-- is_double — Alias of is_float() -->

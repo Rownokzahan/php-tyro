@@ -1,0 +1,1 @@
+<!-- is_real — Alias of is_float() -->
