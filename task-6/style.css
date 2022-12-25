@@ -49,7 +49,7 @@ ul.dashed > li:before {
     content: "- ";
 }
 .personal-info table{
-    margin-left: 70px;
+    margin-left: 5%;
 }
 .personal-info tr td{
     padding-right: 10px;
