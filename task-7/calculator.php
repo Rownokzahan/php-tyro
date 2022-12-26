@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
             $result = $num1 * $num2;
         } elseif ($operation == "div") {
             if ($num2 == 0) {
-                $result = "Cann't Divide by 0";
+                $result = "<small>Cann't Divide by 0</small>";
             } else {
                 $result = $num1 / $num2;
             }

@@ -17,6 +17,12 @@
     margin: 2%;
     padding: 2%;
 }
+small{
+    display: block;
+    font-size: 18px;
+    width: 90px;
+    text-align: center;
+}
 .right-col>*{
     margin: 20px 0;
 }
@@ -53,4 +59,10 @@ button{
 }
 button:hover{
     background-color: rgb(55, 28, 55);  
+}
+
+@media only screen and (max-width= 400px) {
+    *{
+        font-size: smaller;
+    }
 }
