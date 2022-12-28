@@ -1,78 +1,5 @@
 <?php
-    $data = [
-        'info'=> [
-            'name'=> 'Rownok Zahan Rupa',
-            'address'=> 'Nilphamari Sadar,Nilphamari',
-            'email' => 'rownokzahan9@gmail.com',
-            'phone' => '+880XXXXXXXXXX',
-            'image' => 'image/profilePic.jpg',
-        ],
-        'Career Objective' => "Seeking a challenging position in a reputed organization where I can learn new skills, expand my knowledge, and leverage my learnings. To get an opportunity where I can make the best of my potential and contribute to the organization's growth.",
-        'Present Status' => 'Put your current status here',
-        'Education' => [
-            'Honurs' => [
-                'board' => 'UGC',
-                'year' => '2022',
-                'institution' => 'City University',
-                'marks' => '3.49',
-            ],
-            'HSC' => [
-                'board' => 'Dinajpur',
-                'year' => '2018',
-                'institution' => "Nilphamari Govt. Women's College",
-                'marks' => '3.50',
-            ],
-            'SSC' => [
-                'board' => 'Dinajpur',
-                'year' => '2015',
-                'institution' => "Nilphamari Govt. Girls' High School",
-                'marks' => '4.89',
-            ],
-        ],
-        'Computer skills'=> [
-            'Programming Languages'=> ['Javascirpt', 'PHP'],
-            'Web based skills'=> ['HTML', 'CSS', 'Bootsrap', 'Github(Basic)'],
-            'Database skills' => ['Mysql'],
-            'Scripting skills' => ['Javascirpt', 'PHP'],
-            'Development Tools' => ['VS Code'],
-            'Others' => ['MS Word', 'MS Powerpoint'],
-        ],
-        'Professional Experience' => 'None',
-        'Projects' => [
-            'Perfect Fit' => "A website that let's customer to customize their dress which has been build using HTML,CSS,Bootsrap,Javascirpt,PHP",
-        ],
-        'Achievements' => ['None'],
-        'Language'=> ['Bangla', 'English'],
-        'Personal Information'=> [
-            'Full Name'=> 'Rownok Zahan Rupa',
-            "Father's Name"=> 'Abdur Rauf Sarker',
-            "Mother's Name" => 'Nasima Begum',
-            'Date of Birth' => '13-08-1999',
-            'Sex' => 'Female',
-            'Marital Status' => 'Unmarried',
-            'Nationality' => 'Bangladeshi',
-            'Religion' => 'Islam',
-            'Blood Group' => 'A+',
-            'Present Address' => 'Kalitola,Nilphamari Sadar,Nilphamari',
-            'Permanent Address' => 'Kalitola,Nilphamari Sadar,Nilphamari',
-        ],
-        'Hobbies' => [''],
-        'Games' => [''],
-        'References' => [
-            [
-                'name'=> 'Mr. XYZ',
-                'address'=> 'fake address',
-                'email' => 'fake@gmail.com',
-                'phone' => '+880XXXXXXXXXX'
-            ],
-            [
-                'name'=> 'Mr. ABC',
-                'address'=> 'fake address',
-                'email' => 'fake@gmail.com',
-                'phone' => '+880XXXXXXXXXX'
-            ],
-        ],
-    ];
+include __DIR__ . "./dataset.php";
 ?>
 
 <!DOCTYPE html>
@@ -88,11 +15,16 @@
 <body>
     <header>
         <section class="profile">
-            <h2><?= $data['info']['name'];?></h2>
+            <h2><?php isset($data['info']['name'] )? $data['info']['name'] : "NA" ;?></h2>
             <p>
                 <?= $data['info']['address'];?> <br>
-                Email: <?= $data['info']['email'];?><br>
-                Tel: <?= $data['info']['phone'];?><br>
+                Email: <?php if( array_key_exists("email",$data['info'])){
+                    echo $data['info']['email'];
+                } else{
+                    echo "NA";
+                }
+                ?><br>
+                Tel: <?= $data['info']['phone'] ?? "NA";?><br>
             </p>
         </section>
         <section class="profile-pic">
@@ -121,14 +53,23 @@
                 </tr>
 
                 <?php
-                    foreach ($data['Education'] as $key => $value) {
-                        echo '<tr>';
-                        echo "<td>{$key}</td>" ;
-                        foreach ($value as $value){
-                            echo '<td>' . $value . '</td>';
+                    foreach ($data['Education'] as $key => $value) :
+
+                        if(is_array($value)){
+                            if($key=="HSC"):
+                                break;
+                            endif;
+                            echo '<tr>';
+                            echo "<td>{$key}</td>" ;
+                            foreach ($value as $value){
+                                echo '<td>' . $value . '</td>';
+                            }
+                            echo '</tr>';
+                        }else{
+                            continue;
                         }
-                        echo '</tr>';
-                    }
+                        
+                    endforeach;
                 ?>
             </table>
         </section>

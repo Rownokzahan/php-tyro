@@ -12,12 +12,12 @@ if (isset($_POST['submit'])) {
         } elseif ($operation == "sub") {
             $result = $num1 - $num2;
         } elseif ($operation == "mul") {
-            $result = $num1 * $num2;
+            $result = round($num1 * $num2,2);
         } elseif ($operation == "div") {
             if ($num2 == 0) {
                 $result = "<small>Cann't Divide by 0</small>";
             } else {
-                $result = $num1 / $num2;
+                $result = round($num1 / $num2,2);
             }
         }
     } else {
