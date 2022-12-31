@@ -1,7 +1,7 @@
 $('form').on("submit", function (e) {    
     e.preventDefault();
     $.ajax({
-        url:"gpa-calculator.php",
+        url:"gpa-calculator-if.php",
         type:"post",
         data: new FormData(this),
         contentType:false,
