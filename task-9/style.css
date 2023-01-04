@@ -1,7 +1,21 @@
+body{
+    font-family: Helvetica, sans-serif;
+}
+header h1{
+    margin-top: 70px;
+    text-align: center;
+    background-image:linear-gradient(to right, blue,red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;  
+    text-transform:capitalize;
+}
+
 .container{
+    height: 100dvh;
     width: max-content;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 .row{
     display: grid;
@@ -61,6 +75,15 @@ button:hover{
     background-color: rgb(55, 28, 55);  
 }
 
+footer{
+    position: sticky;
+    bottom: 0;
+}
+footer p{
+    color: gray;
+    font-size: small;
+    text-align: center;
+}
 @media only screen and (max-width= 400px) {
     *{
         font-size: smaller;
