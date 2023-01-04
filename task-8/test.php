@@ -1,12 +1,17 @@
 <?php
-    echo test(0);
-    function test($gpa){
+    $gpa = 1;
         switch($gpa){
-            case 4:
-                return 'A+';
-            case $gpa >= 3.7:
+            case ($gpa >= 4 && $gpa<10):
+                echo 'A+';
+                break;
+            case ($gpa >= 3.7 && $gpa<4):
                 return 'A';
+                break;
+            case ($gpa >= 3.5 && $gpa<3.7):
+                    echo 'A';
+                    break;
             default:
-                return 'F' ; 
+                echo 'F' ; 
+                break;
         }
-    }
+
